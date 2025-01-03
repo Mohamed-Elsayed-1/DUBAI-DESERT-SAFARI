@@ -1,0 +1,98 @@
+.header {
+  background-color: #333;
+  color: white;
+  min-height: 80px;
+  position: relative;
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .logo-content {
+      animation: an-out 0.8s ease-out;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      .logo-img {
+        width: 60px;
+      }
+      .logo-text {
+        font-size: 1.2rem;
+        color: var(--orange-color);
+        strong {
+          display: block;
+        }
+      }
+    }
+    ul {
+      display: flex;
+      gap: 1.4rem;
+      li a {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        font-size: 1.1rem;
+        color: white;
+        animation: an-in 0.8s ease-out;
+        transition: 0.5s;
+        &:hover {
+          color: var(--orange-color);
+        }
+      }
+    }
+  }
+}
+
+@keyframes an-in {
+  from {
+    transform: translateX(100px);
+  }
+}
+
+@keyframes an-out {
+  from {
+    transform: translateX(-100px);
+  }
+}
+
+.toggle-menu {
+  font-size: 2.5rem;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .toggle-menu {
+    display: block;
+  }
+  .header nav ul {
+    z-index: 10;
+    position: absolute;
+    flex-direction: column;
+    top: 99%;
+    width: 100%;
+    left: 0;
+    padding: 15px 100px;
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    background-color: #333;
+    transition: 1s;
+  }
+}
+@media (max-width: 576px){
+  .header nav ul{
+    padding: 15px 40px;
+  }
+}
+.animate-icon {
+  animation: toggle-animation 0.5s ease-in-out; 
+}
+
+@keyframes toggle-animation {
+  0% {
+    transform: scale(0.8) rotate(0deg); 
+    opacity: 0; 
+  }
+  100% {
+    transform: scale(1) rotate(360deg); 
+    opacity: 1; 
+  }
+}

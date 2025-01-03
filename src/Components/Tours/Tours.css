@@ -1,0 +1,118 @@
+.section-tours {
+  .tours {
+    padding: 30px 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    .tour-card {
+      position: relative;
+      overflow: hidden;
+      box-shadow: 1px 1px 20px #ddd;
+      border-radius: 10px;
+      transition: 0.5s;
+      img {
+        width: 100%;
+        height: 250px;
+        border-bottom-right-radius: 100px;
+      }
+      .tour-content {
+        padding: 10px;
+        h2 {
+          font-size: 1.4rem;
+          font-weight: 500;
+          height: 60px;
+        }
+        .duration-icon {
+          color: #000;
+        }
+        p {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: #5c5b5b;
+          margin: 10px 0;
+        }
+        .rate {
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          margin: 20px 0;
+          & > span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+          }
+          .review{
+            font-size: 14px;
+            color: #726d6d;
+          }
+          .star-icon {
+            color: #ffd633;
+            font-size: 1.2rem;
+          }
+        }
+      }
+      &:hover {
+        transform: translateY(-8px);
+      }
+    }
+  }
+}
+
+#btn-pagenation {
+  background-color: #7a7a7a;
+  border-radius: 10px;
+  &:hover {
+    background-color: var(--dark-orange-color);
+  }
+  &:disabled {
+    background-color: #adadad;
+  }
+}
+.pagenation {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+.undefined-card {
+  .image {
+    width: 100%;
+    height: 250px;
+    border-bottom-right-radius: 100px;
+    background-color: #ddd;
+  }
+  .tour-content {
+    padding: 10px 0;
+    h2 {
+      height: 20px;
+      background-color: #ddd;
+    }
+    .duration-icon,.star-icon {
+      background-color: #ddd;
+      color: #ddd;
+    }
+    p {
+      display: flex;
+      align-items: center;
+      background-color: #ddd;
+      width: 50px;
+      margin: 10px 0;
+    }
+    .rate {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin: 20px 0;
+      span {
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        width: 50px;
+      }
+    }
+  }
+}
