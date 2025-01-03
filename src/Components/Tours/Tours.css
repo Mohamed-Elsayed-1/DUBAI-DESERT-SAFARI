@@ -1,4 +1,7 @@
 .section-tours {
+  .contanier {
+    position: relative;
+  }
   .tours {
     padding: 30px 0;
     display: grid;
@@ -44,7 +47,7 @@
             font-size: 1rem;
             font-weight: 500;
           }
-          .review{
+          .review {
             font-size: 14px;
             color: #726d6d;
           }
@@ -91,7 +94,8 @@
       height: 20px;
       background-color: #ddd;
     }
-    .duration-icon,.star-icon {
+    .duration-icon,
+    .star-icon {
       background-color: #ddd;
       color: #ddd;
     }
@@ -116,3 +120,4 @@
     }
   }
 }
+
