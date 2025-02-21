@@ -34,6 +34,9 @@
         color: white;
         animation: an-in 0.8s ease-out;
         transition: 0.5s;
+        &.active {
+          color: var(--orange-color);
+        }
         &:hover {
           color: var(--orange-color);
         }
@@ -77,22 +80,22 @@
     transition: 1s;
   }
 }
-@media (max-width: 576px){
-  .header nav ul{
+@media (max-width: 576px) {
+  .header nav ul {
     padding: 15px 40px;
   }
 }
 .animate-icon {
-  animation: toggle-animation 0.5s ease-in-out; 
+  animation: toggle-animation 0.5s ease-in-out;
 }
 
 @keyframes toggle-animation {
   0% {
-    transform: scale(0.8) rotate(0deg); 
-    opacity: 0; 
+    transform: scale(0.8) rotate(0deg);
+    opacity: 0;
   }
   100% {
-    transform: scale(1) rotate(360deg); 
-    opacity: 1; 
+    transform: scale(1) rotate(360deg);
+    opacity: 1;
   }
 }

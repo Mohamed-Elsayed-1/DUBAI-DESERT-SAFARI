@@ -1,0 +1,33 @@
+.input-container {
+  position: relative;
+  width: 100%;
+}
+
+.custom-input {
+  padding: 10px 5px;
+  flex: 1;
+  border: none;
+  border-bottom: 2px solid var(--dark-orange-color);
+  font-size: 1rem;
+  caret-color: var(--orange-color);
+  width: 100%;
+  background: none;
+  outline: none;
+  &:focus + .input-label,
+  &:not(:placeholder-shown) + .input-label{
+    top: -5px;
+    color: var(--orange-color);
+  }
+  
+}
+
+.input-label {
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.3s ease-in-out, top 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  font-size: 1rem;
+  color: gray;
+  pointer-events: none;
+}

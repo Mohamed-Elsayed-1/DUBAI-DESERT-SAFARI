@@ -9,8 +9,12 @@ import {
 import { BsBank2 } from "react-icons/bs";
 import "./Navbar.css";
 import { useState } from "react";
+import { NavLink } from "react-router";
+import { Modal } from "../ui/Modal";
 export const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [opName, setOpName] = useState("");
   return (
     <header className="header">
       <nav className="container">
@@ -28,25 +32,47 @@ export const Navbar = () => {
           }}
         >
           <li>
-            <a onClick={()=>{setToggle(prev=>!prev)}} href="#">
+            <NavLink
+              onClick={() => {
+                setToggle((prev) => !prev);
+              }}
+              to="/"
+            >
               <FaHome />
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a onClick={()=>{setToggle(prev=>!prev)}} href="#">
+            <NavLink
+              onClick={() => {
+                setToggle((prev) => !prev);
+              }}
+              to="/about"
+            >
               <BsBank2 />
               About
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a onClick={()=>{setToggle(prev=>!prev)}} href="#">
+            <a
+              onClick={() => {
+                setOpenModal(true);
+                setOpName("login");
+                setToggle((prev) => !prev);
+              }}
+            >
               <IoLogInSharp />
               Login
             </a>
           </li>
           <li>
-            <a onClick={()=>{setToggle(prev=>!prev)}} href="#">
+            <a
+              onClick={() => {
+                setToggle((prev) => !prev);
+                setOpenModal(true);
+                setOpName("register");
+              }}
+            >
               <IoPersonAdd />
               Register
             </a>
@@ -61,6 +87,12 @@ export const Navbar = () => {
           {toggle ? <IoCloseSharp className="animate-icon" /> : <IoMenuSharp />}
         </div>
       </nav>
+      <Modal
+        openModal={openModal}
+        setOpenModal={setOpenModal}
+        opName={opName}
+        setOpName={setOpName}
+      />
     </header>
   );
 };

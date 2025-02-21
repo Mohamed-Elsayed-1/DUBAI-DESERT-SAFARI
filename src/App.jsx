@@ -1,17 +1,22 @@
+import { BrowserRouter, Routes, Route } from "react-router";
 import "./App.css";
+import { Footer } from "./Components/Footer/Footer";
 import { Navbar } from "./Components/Header/Navbar";
-import { Hero } from "./Components/Hero/Hero";
-import { Services } from "./Components/Services/Services";
-import { Tours } from "./Components/Tours/Tours";
+import { Home } from "./Pages/Home/Home";
+import { About } from "./Pages/About/About";
 function App() {
   return (
     <>
-      <Navbar />
-      <main>
-        <Hero />
-        <Services/>
-        <Tours/>
-      </main>
+      <BrowserRouter>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="about" element={<About />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
