@@ -3,6 +3,7 @@ import { FaClock } from "react-icons/fa";
 import { FaStar } from "react-icons/fa";
 import { HiMiniUsers } from "react-icons/hi2";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 export const TourItem = ({ tour, isLoading }) => {
   return !isLoading ? (
@@ -17,19 +18,23 @@ export const TourItem = ({ tour, isLoading }) => {
         <div className="rate">
           <span>
             <FaStar className="star-icon" />
-            {tour.rating} 
+            {tour.rating}
             <span>rating</span>
           </span>
           <span className="review">
             (<HiMiniUsers />
-            {tour.reviews} 
+            {tour.reviews}
             <span>reviews</span>)
           </span>
         </div>
         <p>
           From<strong> $ {tour.priceFrom} </strong> Per person
         </p>
-        <Button style={{ width: "100%", borderRadius: "10px" }}>
+        <Button
+          as={Link}
+          to={`/tour/${tour.id}`}
+          style={{ width: "100%", borderRadius: "10px" }}
+        >
           See More
         </Button>
       </div>
@@ -70,6 +75,7 @@ TourItem.propTypes = {
     rating: PropTypes.number.isRequired,
     reviews: PropTypes.string.isRequired,
     priceFrom: PropTypes.number.isRequired,
+    id: PropTypes.number.isRequired,
   }),
   isLoading: PropTypes.bool,
 };

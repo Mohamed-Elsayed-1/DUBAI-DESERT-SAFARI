@@ -1,15 +1,20 @@
 import PropTypes from "prop-types";
 
-export const Button = ({ type = "button", children, ...rest }) => {
+export const Button = ({
+  as: Component = "button",
+  type = "button",
+  children,
+  ...rest
+}) => {
   return (
-    <button type={type} {...rest} className="btn">
+    <Component type={type} {...rest} className="btn">
       {children}
-    </button>
+    </Component>
   );
 };
 
-
 Button.propTypes = {
-  type: PropTypes.string, 
-  children: PropTypes.node, 
+  type: PropTypes.string,
+  children: PropTypes.node,
+  as: PropTypes.elementType,
 };

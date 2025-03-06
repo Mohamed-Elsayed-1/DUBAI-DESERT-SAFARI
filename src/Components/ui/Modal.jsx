@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import "./Modal.css";
-
+import PropTypes from "prop-types";
 import { Input } from "./Input";
 import { Button } from "./Button";
 
@@ -78,4 +78,11 @@ export const Modal = ({ openModal, setOpenModal, opName, setOpName }) => {
       </div>
     )
   );
+};
+
+Modal.propTypes = {
+  openModal: PropTypes.bool,
+  setOpenModal: PropTypes.func,
+  setOpName: PropTypes.func,
+  opName: PropTypes.string,
 };
