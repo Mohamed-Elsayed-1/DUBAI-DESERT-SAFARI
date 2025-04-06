@@ -96,3 +96,15 @@
     transform: translateX(-50%);
   }
 }
+
+@media (max-width:600px){
+  .modal-overlay .modal-container{
+    width: 400px;
+  }
+}
+
+@media (max-width:377px){
+  .modal-overlay .modal-container{
+    width: 350px;
+  }
+}
