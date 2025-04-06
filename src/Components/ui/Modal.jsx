@@ -50,10 +50,10 @@ export const Modal = ({ openModal, setOpenModal, opName, setOpName }) => {
             <>
               <h2>Welcome, Start Your Journy</h2>
               <form className="form-container">
-                <Input title="Email" />
-                <Input title="Username" />
-                <Input title="Password" />
-                <Input title="Confirm Password" />
+                <Input title="Email" type="email" />
+                <Input title="Username" type="text" />
+                <Input title="Password" type="text" />
+                <Input title="Confirm Password" type="text" />
                 <Button>Register</Button>
               </form>
             </>
@@ -61,15 +61,15 @@ export const Modal = ({ openModal, setOpenModal, opName, setOpName }) => {
             <>
               <h2>Welcome back</h2>
               <form className="form-container">
-                <Input title="Email" />
-                <Input title="Password" />
-                <p className="login-content">
+                <Input title="Email" type="email" />
+                <Input title="Password" type="text" />
+                <div className="login-content">
                   <div>
                     <input type="checkbox" />
                     Remeber Me!
                   </div>
                   <a>Forget Password ?</a>
-                </p>
+                </div>
                 <Button>Login</Button>
               </form>
             </>
